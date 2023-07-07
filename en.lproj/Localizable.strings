@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  iTunesSearchApp
+
+  Created by Mahesh De Silva on 7/7/2023.
+  
+*/
+"search_title" = "Search";
+"searchbar_placeholder" = "Artists, Songs and More";

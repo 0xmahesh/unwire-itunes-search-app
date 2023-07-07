@@ -8,5 +8,10 @@
 import Foundation
 
 struct Song: Codable {
-    
+    let artworkImageUrl: String
+    let trackName: String
+    let artistName: String
+    let shortDescription: String
 }
+
+extension Song: Hashable {}
