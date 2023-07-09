@@ -37,6 +37,7 @@
 		3D0249452A5AC06D00F0E591 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249442A5AC06D00F0E591 /* UIViewController+Alert.swift */; };
 		3D02494A2A5AC29300F0E591 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249492A5AC29300F0E591 /* NetworkError.swift */; };
 		3D02494C2A5AC2CC00F0E591 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02494B2A5AC2CC00F0E591 /* APIEndpoint.swift */; };
+		3D02494F2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02494E2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		3D0249442A5AC06D00F0E591 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		3D0249492A5AC29300F0E591 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3D02494B2A5AC2CC00F0E591 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		3D02494E2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchAPIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 		3D0248CE2A56C8CF00F0E591 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3D02494D2A5AC35200F0E591 /* Endpoints */,
 				3D0248F32A56D46A00F0E591 /* ObjectMappers */,
 				3D0248F02A56D3B900F0E591 /* API */,
 				3D0248ED2A56D38F00F0E591 /* Repositories */,
@@ -406,6 +409,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3D02494D2A5AC35200F0E591 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				3D02494E2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0248E82A56CF7F00F0E591 /* Song.swift in Sources */,
+				3D02494F2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift in Sources */,
 				3D0248D72A56CC4100F0E591 /* SearchResultsListViewController.swift in Sources */,
 				3D02494C2A5AC2CC00F0E591 /* APIEndpoint.swift in Sources */,
 				3D0248EC2A56D33800F0E591 /* SearchRepository.swift in Sources */,
