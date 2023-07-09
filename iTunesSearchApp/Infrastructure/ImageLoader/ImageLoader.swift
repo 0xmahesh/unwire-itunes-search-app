@@ -8,9 +8,50 @@
 import Foundation
 import UIKit
 
-class ImageLoader: ImageFetchable {
-    func fetch(_ url: URL) async throws -> UIImage? {
-        return nil
+actor ImageLoader: ImageFetchable {
+    
+    private let urlSession: URLSession
+    private var images: [URLRequest: ImageLoaderStatus] = [:]
+ 
+    private enum ImageLoaderStatus {
+        case inProgress(Task<UIImage?, Error>)
+        case fetched(UIImage)
     }
     
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+    
+    func fetch(_ url: URL) async throws -> UIImage? {
+        let urlRequest = URLRequest(url: url)
+        
+        if let status = images[urlRequest] {
+            switch status {
+            case .inProgress(let task):
+                return try await task.value
+            case .fetched(let image):
+                return image
+            }
+        }
+        
+        let task: Task<UIImage?, Error> = Task {
+            if Task.isCancelled {
+                return nil
+            }
+            let (data, _) = try await urlSession.data(for: urlRequest)
+            let image = UIImage(data: data)!
+            return image
+        }
+        
+        images[urlRequest] = .inProgress(task)
+        
+        if let image = try await task.value {
+            images[urlRequest] = .fetched(image)
+            return image
+        } else {
+            return nil
+        }
+    }
+
 }
+
