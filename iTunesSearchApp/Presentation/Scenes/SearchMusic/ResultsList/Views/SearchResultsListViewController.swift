@@ -141,14 +141,6 @@ extension SearchResultsListViewController: UITableViewDelegate {
     
 }
 
-private extension UIView {
-    func addSubViews(_ views: [UIView]) {
-        for view in views {
-            self.addSubview(view)
-        }
-    }
-}
-
 extension SearchResultsListViewController: UITextFieldDelegate {
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         showNoResultsBanner(true)

@@ -48,6 +48,7 @@
 		3D0249622A5AC73900F0E591 /* StandardImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249612A5AC73900F0E591 /* StandardImageDataSource.swift */; };
 		3D0249652A5AC7BC00F0E591 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249642A5AC7BC00F0E591 /* ImageLoader.swift */; };
 		3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249672A5AC7D200F0E591 /* ImageFetchable.swift */; };
+		3D02496A2A5ACAAC00F0E591 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249692A5ACAAC00F0E591 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		3D0249612A5AC73900F0E591 /* StandardImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardImageDataSource.swift; sourceTree = "<group>"; };
 		3D0249642A5AC7BC00F0E591 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		3D0249672A5AC7D200F0E591 /* ImageFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchable.swift; sourceTree = "<group>"; };
+		3D0249692A5ACAAC00F0E591 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 				3D0249042A57DD7D00F0E591 /* String+Localizable.swift */,
 				3D0249062A57EE1300F0E591 /* FontUtility.swift */,
 				3D0249442A5AC06D00F0E591 /* UIViewController+Alert.swift */,
+				3D0249692A5ACAAC00F0E591 /* UIView+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				3D0249652A5AC7BC00F0E591 /* ImageLoader.swift in Sources */,
 				3D0248EC2A56D33800F0E591 /* SearchRepository.swift in Sources */,
 				3D0248A02A56C76E00F0E591 /* ViewController.swift in Sources */,
+				3D02496A2A5ACAAC00F0E591 /* UIView+Extension.swift in Sources */,
 				3D02489C2A56C76E00F0E591 /* AppDelegate.swift in Sources */,
 				3D02493F2A5ABCC100F0E591 /* BaseViewController.swift in Sources */,
 				3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */,
