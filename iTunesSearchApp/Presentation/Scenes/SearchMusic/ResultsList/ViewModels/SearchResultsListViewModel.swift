@@ -30,13 +30,44 @@ final class SearchResultsListViewModel {
     
     @MainActor
     func search(with query: String) async {
-        //
+        searchTerm = query
+        
+        guard !query.isEmpty else {
+            viewState.send(.updateDataSource([]))
+            return
+        }
+        
+        viewState.send(.isLoading(true))
+        
+        searchTask?.cancel() // cancel in-flight search request.
+        searchTask = makeSearchTask(with: query)
+        
+        do {
+            if let songs = try await searchTask?.value {
+                viewState.send(.updateDataSource(songs))
+            }
+        } catch {
+            viewState.send(.error(.unknown))
+        }
+        
+        viewState.send(.isLoading(false))
     }
     
     func clearResults() {
         searchTerm = ""
         viewState.send(.updateDataSource([]))
     }
+    
+    private func makeSearchTask(with query: String) -> Task<[Song]?, Error> {
+        return Task {
+            do {
+                return Task.isCancelled ? nil : try await searchSongsUseCase.execute(with: query)
+            } catch {
+                return nil
+            }
+        }
+    }
+
 }
 
 enum SearchResultsError: Error {

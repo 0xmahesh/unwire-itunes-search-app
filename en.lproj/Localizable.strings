@@ -7,3 +7,6 @@
 */
 "search_title" = "Search";
 "searchbar_placeholder" = "Artists, Songs and More";
+"empty_search_results_message" = "No results.\nPlease try another keyword.";
+"unknown_error_title" = "Oops!";
+"unknown_error_desc" = "Something went wrong...";
