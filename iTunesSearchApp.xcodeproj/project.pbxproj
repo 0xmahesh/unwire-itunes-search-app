@@ -31,6 +31,7 @@
 		3D0249012A57DCE700F0E591 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D0249032A57DCE700F0E591 /* Localizable.strings */; };
 		3D0249052A57DD7D00F0E591 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249042A57DD7D00F0E591 /* String+Localizable.swift */; };
 		3D0249072A57EE1300F0E591 /* FontUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249062A57EE1300F0E591 /* FontUtility.swift */; };
+		3D0249412A5ABE0000F0E591 /* FetchImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249402A5ABE0000F0E591 /* FetchImageUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		3D0249022A57DCE700F0E591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3D0249042A57DD7D00F0E591 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		3D0249062A57EE1300F0E591 /* FontUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtility.swift; sourceTree = "<group>"; };
+		3D0249402A5ABE0000F0E591 /* FetchImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

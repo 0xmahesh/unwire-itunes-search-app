@@ -7,6 +7,10 @@
 
 import Foundation
 
-final class StandardSearchRepository {
+final class StandardSearchRepository: SearchRepository {
+    func fetchSearchResults(for query: String) async throws -> [Song]? {
+        return nil
+    }
+    
     
 }

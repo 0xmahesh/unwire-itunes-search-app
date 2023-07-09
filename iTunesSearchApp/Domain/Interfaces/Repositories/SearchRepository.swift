@@ -10,3 +10,5 @@ import Foundation
 protocol SearchRepository {
     func fetchSearchResults(for query: String) async throws -> [Song]?
 }
+
+
