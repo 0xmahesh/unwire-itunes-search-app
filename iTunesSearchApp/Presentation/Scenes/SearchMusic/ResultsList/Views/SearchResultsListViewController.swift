@@ -54,6 +54,7 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
         super.viewDidLoad()
         setupUI()
         setupBindings()
+        dismissKeyboardOnTap()
         tableView.delegate = self
     }
     
@@ -138,7 +139,9 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
 // MARK: UITableViewDelegate methods
 
 extension SearchResultsListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
+    }
 }
 
 extension SearchResultsListViewController: UITextFieldDelegate {

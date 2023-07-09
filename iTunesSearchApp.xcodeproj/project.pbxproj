@@ -34,7 +34,7 @@
 		3D02493F2A5ABCC100F0E591 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02493E2A5ABCC100F0E591 /* BaseViewController.swift */; };
 		3D0249412A5ABE0000F0E591 /* FetchImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249402A5ABE0000F0E591 /* FetchImageUseCase.swift */; };
 		3D0249432A5ABF7A00F0E591 /* SearchResultsListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249422A5ABF7A00F0E591 /* SearchResultsListItemViewModel.swift */; };
-		3D0249452A5AC06D00F0E591 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249442A5AC06D00F0E591 /* UIViewController+Alert.swift */; };
+		3D0249452A5AC06D00F0E591 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249442A5AC06D00F0E591 /* UIViewController+Extension.swift */; };
 		3D02494A2A5AC29300F0E591 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249492A5AC29300F0E591 /* NetworkError.swift */; };
 		3D02494C2A5AC2CC00F0E591 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02494B2A5AC2CC00F0E591 /* APIEndpoint.swift */; };
 		3D02494F2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02494E2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift */; };
@@ -104,7 +104,7 @@
 		3D02493E2A5ABCC100F0E591 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3D0249402A5ABE0000F0E591 /* FetchImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageUseCase.swift; sourceTree = "<group>"; };
 		3D0249422A5ABF7A00F0E591 /* SearchResultsListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListItemViewModel.swift; sourceTree = "<group>"; };
-		3D0249442A5AC06D00F0E591 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		3D0249442A5AC06D00F0E591 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3D0249492A5AC29300F0E591 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3D02494B2A5AC2CC00F0E591 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		3D02494E2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchAPIEndpoint.swift; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 			children = (
 				3D0249042A57DD7D00F0E591 /* String+Localizable.swift */,
 				3D0249062A57EE1300F0E591 /* FontUtility.swift */,
-				3D0249442A5AC06D00F0E591 /* UIViewController+Alert.swift */,
+				3D0249442A5AC06D00F0E591 /* UIViewController+Extension.swift */,
 				3D0249692A5ACAAC00F0E591 /* UIView+Extension.swift */,
 			);
 			path = Util;
@@ -690,7 +690,7 @@
 				3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */,
 				3D0249762A5ACDC200F0E591 /* AppFlowCoordinator.swift in Sources */,
 				3D0249712A5ACCB000F0E591 /* SearchMusicFlowDependencyProviding.swift in Sources */,
-				3D0249452A5AC06D00F0E591 /* UIViewController+Alert.swift in Sources */,
+				3D0249452A5AC06D00F0E591 /* UIViewController+Extension.swift in Sources */,
 				3D0249602A5AC72200F0E591 /* ImageDataSource.swift in Sources */,
 				3D0248DD2A56CD8400F0E591 /* SearchMusicFlowCoordinator.swift in Sources */,
 				3D0248E02A56CE2500F0E591 /* SearchResultsTableViewCell.swift in Sources */,
