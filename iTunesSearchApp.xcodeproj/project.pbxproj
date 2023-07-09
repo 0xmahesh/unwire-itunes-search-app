@@ -49,6 +49,10 @@
 		3D0249652A5AC7BC00F0E591 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249642A5AC7BC00F0E591 /* ImageLoader.swift */; };
 		3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249672A5AC7D200F0E591 /* ImageFetchable.swift */; };
 		3D02496A2A5ACAAC00F0E591 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249692A5ACAAC00F0E591 /* UIView+Extension.swift */; };
+		3D02496D2A5ACC4C00F0E591 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02496C2A5ACC4C00F0E591 /* AppDIContainer.swift */; };
+		3D0249712A5ACCB000F0E591 /* SearchMusicFlowDependencyProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249702A5ACCB000F0E591 /* SearchMusicFlowDependencyProviding.swift */; };
+		3D0249732A5ACCF200F0E591 /* SearchMusicSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249722A5ACCF200F0E591 /* SearchMusicSceneDIContainer.swift */; };
+		3D0249762A5ACDC200F0E591 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249752A5ACDC200F0E591 /* AppFlowCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +119,10 @@
 		3D0249642A5AC7BC00F0E591 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		3D0249672A5AC7D200F0E591 /* ImageFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchable.swift; sourceTree = "<group>"; };
 		3D0249692A5ACAAC00F0E591 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3D02496C2A5ACC4C00F0E591 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		3D0249702A5ACCB000F0E591 /* SearchMusicFlowDependencyProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicFlowDependencyProviding.swift; sourceTree = "<group>"; };
+		3D0249722A5ACCF200F0E591 /* SearchMusicSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicSceneDIContainer.swift; sourceTree = "<group>"; };
+		3D0249752A5ACDC200F0E591 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,8 @@
 		3D0248CB2A56C8A700F0E591 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				3D0249742A5ACDAC00F0E591 /* FlowCoordinators */,
+				3D02496B2A5ACC3800F0E591 /* DI */,
 				3D02489B2A56C76E00F0E591 /* AppDelegate.swift */,
 				3D02489D2A56C76E00F0E591 /* SceneDelegate.swift */,
 			);
@@ -490,6 +500,40 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3D02496B2A5ACC3800F0E591 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				3D02496E2A5ACC8D00F0E591 /* Scenes */,
+				3D02496C2A5ACC4C00F0E591 /* AppDIContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		3D02496E2A5ACC8D00F0E591 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3D02496F2A5ACC9300F0E591 /* SearchMusic */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3D02496F2A5ACC9300F0E591 /* SearchMusic */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249702A5ACCB000F0E591 /* SearchMusicFlowDependencyProviding.swift */,
+				3D0249722A5ACCF200F0E591 /* SearchMusicSceneDIContainer.swift */,
+			);
+			path = SearchMusic;
+			sourceTree = "<group>";
+		};
+		3D0249742A5ACDAC00F0E591 /* FlowCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249752A5ACDC200F0E591 /* AppFlowCoordinator.swift */,
+			);
+			path = FlowCoordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -627,13 +671,17 @@
 				3D02494F2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift in Sources */,
 				3D0248D72A56CC4100F0E591 /* SearchResultsListViewController.swift in Sources */,
 				3D02494C2A5AC2CC00F0E591 /* APIEndpoint.swift in Sources */,
+				3D0249732A5ACCF200F0E591 /* SearchMusicSceneDIContainer.swift in Sources */,
 				3D0249652A5AC7BC00F0E591 /* ImageLoader.swift in Sources */,
 				3D0248EC2A56D33800F0E591 /* SearchRepository.swift in Sources */,
 				3D0248A02A56C76E00F0E591 /* ViewController.swift in Sources */,
+				3D02496D2A5ACC4C00F0E591 /* AppDIContainer.swift in Sources */,
 				3D02496A2A5ACAAC00F0E591 /* UIView+Extension.swift in Sources */,
 				3D02489C2A56C76E00F0E591 /* AppDelegate.swift in Sources */,
 				3D02493F2A5ABCC100F0E591 /* BaseViewController.swift in Sources */,
 				3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */,
+				3D0249762A5ACDC200F0E591 /* AppFlowCoordinator.swift in Sources */,
+				3D0249712A5ACCB000F0E591 /* SearchMusicFlowDependencyProviding.swift in Sources */,
 				3D0249452A5AC06D00F0E591 /* UIViewController+Alert.swift in Sources */,
 				3D0249602A5AC72200F0E591 /* ImageDataSource.swift in Sources */,
 				3D0248DD2A56CD8400F0E591 /* SearchMusicFlowCoordinator.swift in Sources */,

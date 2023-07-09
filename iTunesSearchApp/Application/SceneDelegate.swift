@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator: Coordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,9 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let appDIContainer = AppDIContainer()
+        let navigationController = UINavigationController()
+        let appFlowCoordinator = AppFlowCoordinator(navigationController: navigationController, dependencyContainer: appDIContainer)
+        coordinator = appFlowCoordinator
+        coordinator?.start()
+        
         window = UIWindow(windowScene: windowScene)
-        let searchResultsViewController = SearchResultsListViewController(viewModel: SearchResultsListViewModel(searchSongsUseCase: StandardSearchSongsUseCase(searchRepository: StandardSearchRepository(apiDataSource: StandardAPIDataSource(networkService: URLSessionHTTPClient()))), fetchImagesUseCase: StandardFetchImageUseCase(imageRepository: StandardImageRepository(imageDataSource: StandardImageDataSource(imageLoader: ImageLoader())))))
-        let navigationController = UINavigationController(rootViewController: searchResultsViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
