@@ -7,11 +7,22 @@
 
 import Foundation
 
-struct Song: Codable {
+struct Song: Codable, Identifiable, Hashable {
+    var id = UUID()
     let artworkImageUrl: String
     let trackName: String
     let artistName: String
     let shortDescription: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(trackName)
+        hasher.combine(artistName)
+    }
+    
+    static func ==(lhs: Song, rhs: Song) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.artistName == rhs.artistName &&
+        lhs.trackName == rhs.trackName
+    }
 }
-
-extension Song: Hashable {}
