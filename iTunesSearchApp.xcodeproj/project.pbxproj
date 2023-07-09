@@ -38,6 +38,10 @@
 		3D02494A2A5AC29300F0E591 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249492A5AC29300F0E591 /* NetworkError.swift */; };
 		3D02494C2A5AC2CC00F0E591 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02494B2A5AC2CC00F0E591 /* APIEndpoint.swift */; };
 		3D02494F2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02494E2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift */; };
+		3D0249532A5AC3FB00F0E591 /* APIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249522A5AC3FB00F0E591 /* APIDataSource.swift */; };
+		3D0249562A5AC46900F0E591 /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249552A5AC46900F0E591 /* SearchResultDTO.swift */; };
+		3D0249582A5AC48100F0E591 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249572A5AC48100F0E591 /* SearchResponse.swift */; };
+		3D02495A2A5AC4D500F0E591 /* StandardAPIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249592A5AC4D500F0E591 /* StandardAPIDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		3D0249492A5AC29300F0E591 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3D02494B2A5AC2CC00F0E591 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		3D02494E2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchAPIEndpoint.swift; sourceTree = "<group>"; };
+		3D0249522A5AC3FB00F0E591 /* APIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataSource.swift; sourceTree = "<group>"; };
+		3D0249552A5AC46900F0E591 /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
+		3D0249572A5AC48100F0E591 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		3D0249592A5AC4D500F0E591 /* StandardAPIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardAPIDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +215,8 @@
 		3D0248CE2A56C8CF00F0E591 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3D0249542A5AC45C00F0E591 /* DTOs */,
+				3D0249502A5AC3E700F0E591 /* DataSources */,
 				3D02494D2A5AC35200F0E591 /* Endpoints */,
 				3D0248F32A56D46A00F0E591 /* ObjectMappers */,
 				3D0248F02A56D3B900F0E591 /* API */,
@@ -417,6 +427,32 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		3D0249502A5AC3E700F0E591 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249512A5AC3EE00F0E591 /* Protocols */,
+				3D0249592A5AC4D500F0E591 /* StandardAPIDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		3D0249512A5AC3EE00F0E591 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249522A5AC3FB00F0E591 /* APIDataSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3D0249542A5AC45C00F0E591 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249552A5AC46900F0E591 /* SearchResultDTO.swift */,
+				3D0249572A5AC48100F0E591 /* SearchResponse.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -562,12 +598,16 @@
 				3D0248E02A56CE2500F0E591 /* SearchResultsTableViewCell.swift in Sources */,
 				3D02494A2A5AC29300F0E591 /* NetworkError.swift in Sources */,
 				3D0249412A5ABE0000F0E591 /* FetchImageUseCase.swift in Sources */,
+				3D0249582A5AC48100F0E591 /* SearchResponse.swift in Sources */,
 				3D0249052A57DD7D00F0E591 /* String+Localizable.swift in Sources */,
 				3D0249432A5ABF7A00F0E591 /* SearchResultsListItemViewModel.swift in Sources */,
+				3D02495A2A5AC4D500F0E591 /* StandardAPIDataSource.swift in Sources */,
 				3D0248F22A56D3D100F0E591 /* APIEndpoints.swift in Sources */,
 				3D0249072A57EE1300F0E591 /* FontUtility.swift in Sources */,
 				3D0248EF2A56D39E00F0E591 /* StandardSearchRepository.swift in Sources */,
+				3D0249562A5AC46900F0E591 /* SearchResultDTO.swift in Sources */,
 				3D0248E22A56CE8000F0E591 /* SearchResultsListViewModel.swift in Sources */,
+				3D0249532A5AC3FB00F0E591 /* APIDataSource.swift in Sources */,
 				3D0248FB2A56D57000F0E591 /* URLSessionHTTPClient.swift in Sources */,
 				3D0248F92A56D55E00F0E591 /* HTTPClient.swift in Sources */,
 				3D0248F52A56D48500F0E591 /* SearchResultDTO+Mapping.swift in Sources */,
