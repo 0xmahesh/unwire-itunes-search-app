@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 final class SearchResultsListItemViewModel {
-    
     private let song: Song
     private let fetchImageUseCase: FetchImageUseCase
+    private(set) var fetchImageTask: Task<UIImage?, Error>?
     
     var title: String {
         return song.trackName
@@ -32,5 +32,21 @@ final class SearchResultsListItemViewModel {
     init(with song: Song, fetchImageUseCase: FetchImageUseCase) {
         self.song = song
         self.fetchImageUseCase = fetchImageUseCase
+    }
+    
+    func fetchAlbumArtwork() async -> UIImage? {
+        fetchImageTask = makeFetchImageTask()
+        do {
+            return try await fetchImageTask?.value
+        } catch {
+            print("error downloading image...")
+            return nil
+        }
+    }
+    
+    private func makeFetchImageTask() -> Task<UIImage?, Error> {
+        return Task {
+            return Task.isCancelled ? nil : try await fetchImageUseCase.execute(with: imageUrl)
+        }
     }
 }

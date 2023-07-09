@@ -69,6 +69,9 @@ class SearchResultsTableViewCell: UITableViewCell {
         artistLabel.text = vm.subtitle
         descriptionLabel.text = vm.description
         
+        Task {
+            artworkImageView.image = await viewModel?.fetchAlbumArtwork()
+        }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -81,6 +84,10 @@ class SearchResultsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        viewModel?.fetchImageTask?.cancel()
+        artworkImageView.image = nil
+    }
     
     private func setupUI() {
         contentView.addSubview(stackView)
