@@ -7,15 +7,16 @@
 
 import UIKit
 
+import UIKit
+
 class SearchResultsTableViewCell: UITableViewCell {
     
     static let identifier = String(describing: SearchResultsTableViewCell.self)
     static let estimatedRowHeight: CGFloat = 85
 
-    // UI elements
     private let artworkImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8.0
         imageView.clipsToBounds = true
         return imageView
@@ -42,6 +43,8 @@ class SearchResultsTableViewCell: UITableViewCell {
         return label
     }()
     
+    private var viewModel: SearchResultsListItemViewModel?
+    
     // Parent stack view
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [artworkImageView, verticalStackView])
@@ -51,7 +54,6 @@ class SearchResultsTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    // Vertical stack view
     private lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, artistLabel, descriptionLabel])
         stackView.axis = .vertical
@@ -60,24 +62,13 @@ class SearchResultsTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    // Configure cell with Song data
-    func configure(with song: Song) {
-        titleLabel.text = song.trackName
-        artistLabel.text = song.artistName
-        descriptionLabel.text = song.shortDescription
+    @MainActor
+    func configure(with vm: SearchResultsListItemViewModel) {
+        self.viewModel = vm
+        titleLabel.text = vm.title
+        artistLabel.text = vm.subtitle
+        descriptionLabel.text = vm.description
         
-        // Load artwork image asynchronously
-        DispatchQueue.global().async {
-            guard let url = URL(string: song.artworkImageUrl),
-                  let data = try? Data(contentsOf: url),
-                  let image = UIImage(data: data) else {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.artworkImageView.image = image
-            }
-        }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -89,6 +80,7 @@ class SearchResultsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func setupUI() {
         contentView.addSubview(stackView)
@@ -107,3 +99,6 @@ class SearchResultsTableViewCell: UITableViewCell {
         ])
     }
 }
+
+
+

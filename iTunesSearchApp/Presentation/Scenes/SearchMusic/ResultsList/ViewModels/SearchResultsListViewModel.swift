@@ -8,23 +8,51 @@
 import Foundation
 import Combine
 
+enum SearchResultsViewState {
+    case isLoading(Bool)
+    case updateDataSource([Song])
+    case error(SearchResultsError)
+}
+
 final class SearchResultsListViewModel {
-    @Published private(set) var songs: [Song] = []
+    private let searchSongsUseCase: SearchSongsUseCase
+    private(set) var viewState = PassthroughSubject<SearchResultsViewState, Never>()
+    private var searchTask: Task<[Song]?, Error>?
+    @Published private(set) var searchTerm: String = ""
     
-    init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let songs = [
-                Song(artworkImageUrl: "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/48/59/21/485921c3-9372-37ad-9710-953ef447d561/5039060664698.png/60x60bb.jpg",
-                     trackName: "Begin Again",
-                     artistName: "Ben Bohmer",
-                     shortDescription: "Album - Begin Again (2021)"),
-                Song(artworkImageUrl: "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/48/59/21/485921c3-9372-37ad-9710-953ef447d561/5039060664698.png/60x60bb.jpg",
-                     trackName: "Song 2",
-                     artistName: "Artist 2",
-                     shortDescription: "Description 2")
-            ]
-            
-            self.songs = songs
+    let searchTextFieldDebounceThreshold: Int = 500
+    let fetchImagesUseCase: FetchImageUseCase
+    
+    init(searchSongsUseCase: SearchSongsUseCase, fetchImagesUseCase: FetchImageUseCase) {
+        self.searchSongsUseCase = searchSongsUseCase
+        self.fetchImagesUseCase = fetchImagesUseCase
+    }
+    
+    @MainActor
+    func search(with query: String) async {
+        //
+    }
+    
+    func clearResults() {
+        searchTerm = ""
+        viewState.send(.updateDataSource([]))
+    }
+}
+
+enum SearchResultsError: Error {
+    case unknown
+    
+    var title: String {
+        switch self {
+        case .unknown:
+            return "unknown_error_title".localized
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .unknown:
+            return "unknown_error_desc".localized
         }
     }
 }
