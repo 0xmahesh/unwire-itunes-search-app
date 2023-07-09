@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HTTPClient {
-    
+    func executeRequestWithJSONDecoding<ResponseBody: Decodable>(_ endpoint: APIEndpoint, for type: ResponseBody.Type) async -> Result<(ResponseBody, HTTPURLResponse), NetworkError>
 }
