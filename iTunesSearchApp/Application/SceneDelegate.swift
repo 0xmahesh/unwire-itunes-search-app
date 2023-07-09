@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         window = UIWindow(windowScene: windowScene)
-        let searchResultsViewController = SearchResultsListViewController(viewModel: SearchResultsListViewModel(searchSongsUseCase: StandardSearchSongsUseCase(searchRepository: StandardSearchRepository(apiDataSource: StandardAPIDataSource(networkService: URLSessionHTTPClient()))), fetchImagesUseCase: StandardFetchImageUseCase()))
+        let searchResultsViewController = SearchResultsListViewController(viewModel: SearchResultsListViewModel(searchSongsUseCase: StandardSearchSongsUseCase(searchRepository: StandardSearchRepository(apiDataSource: StandardAPIDataSource(networkService: URLSessionHTTPClient()))), fetchImagesUseCase: StandardFetchImageUseCase(imageRepository: StandardImageRepository(imageDataSource: StandardImageDataSource(imageLoader: ImageLoader())))))
         let navigationController = UINavigationController(rootViewController: searchResultsViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

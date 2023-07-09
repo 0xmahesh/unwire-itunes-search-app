@@ -13,8 +13,14 @@ protocol FetchImageUseCase {
 }
 
 final class StandardFetchImageUseCase: FetchImageUseCase {
+    private let imageRepository: ImageRepository
+    
+    init(imageRepository: ImageRepository) {
+        self.imageRepository = imageRepository
+    }
+    
     func execute(with url: URL) async throws -> UIImage? {
-        return nil
+        return try await imageRepository.fetchImageData(url: url)
     }
 }
 

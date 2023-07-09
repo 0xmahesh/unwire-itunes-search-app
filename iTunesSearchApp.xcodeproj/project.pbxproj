@@ -42,6 +42,12 @@
 		3D0249562A5AC46900F0E591 /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249552A5AC46900F0E591 /* SearchResultDTO.swift */; };
 		3D0249582A5AC48100F0E591 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249572A5AC48100F0E591 /* SearchResponse.swift */; };
 		3D02495A2A5AC4D500F0E591 /* StandardAPIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249592A5AC4D500F0E591 /* StandardAPIDataSource.swift */; };
+		3D02495C2A5AC6B000F0E591 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02495B2A5AC6B000F0E591 /* ImageRepository.swift */; };
+		3D02495E2A5AC70D00F0E591 /* StandardImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02495D2A5AC70D00F0E591 /* StandardImageRepository.swift */; };
+		3D0249602A5AC72200F0E591 /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02495F2A5AC72200F0E591 /* ImageDataSource.swift */; };
+		3D0249622A5AC73900F0E591 /* StandardImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249612A5AC73900F0E591 /* StandardImageDataSource.swift */; };
+		3D0249652A5AC7BC00F0E591 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249642A5AC7BC00F0E591 /* ImageLoader.swift */; };
+		3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249672A5AC7D200F0E591 /* ImageFetchable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +107,12 @@
 		3D0249552A5AC46900F0E591 /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
 		3D0249572A5AC48100F0E591 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		3D0249592A5AC4D500F0E591 /* StandardAPIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardAPIDataSource.swift; sourceTree = "<group>"; };
+		3D02495B2A5AC6B000F0E591 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		3D02495D2A5AC70D00F0E591 /* StandardImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardImageRepository.swift; sourceTree = "<group>"; };
+		3D02495F2A5AC72200F0E591 /* ImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
+		3D0249612A5AC73900F0E591 /* StandardImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardImageDataSource.swift; sourceTree = "<group>"; };
+		3D0249642A5AC7BC00F0E591 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		3D0249672A5AC7D200F0E591 /* ImageFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetchable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +240,7 @@
 		3D0248CF2A56C8D400F0E591 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				3D0249632A5AC7AD00F0E591 /* ImageLoader */,
 				3D0249462A5AC26900F0E591 /* Common */,
 				3D0248F62A56D4F200F0E591 /* Networking */,
 			);
@@ -341,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				3D0248EB2A56D33800F0E591 /* SearchRepository.swift */,
+				3D02495B2A5AC6B000F0E591 /* ImageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -349,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				3D0248EE2A56D39E00F0E591 /* StandardSearchRepository.swift */,
+				3D02495D2A5AC70D00F0E591 /* StandardImageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -432,6 +447,7 @@
 			children = (
 				3D0249512A5AC3EE00F0E591 /* Protocols */,
 				3D0249592A5AC4D500F0E591 /* StandardAPIDataSource.swift */,
+				3D0249612A5AC73900F0E591 /* StandardImageDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -440,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				3D0249522A5AC3FB00F0E591 /* APIDataSource.swift */,
+				3D02495F2A5AC72200F0E591 /* ImageDataSource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -451,6 +468,23 @@
 				3D0249572A5AC48100F0E591 /* SearchResponse.swift */,
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		3D0249632A5AC7AD00F0E591 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249662A5AC7C700F0E591 /* Protocols */,
+				3D0249642A5AC7BC00F0E591 /* ImageLoader.swift */,
+			);
+			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		3D0249662A5AC7C700F0E591 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249672A5AC7D200F0E591 /* ImageFetchable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,14 +620,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0248E82A56CF7F00F0E591 /* Song.swift in Sources */,
+				3D02495C2A5AC6B000F0E591 /* ImageRepository.swift in Sources */,
 				3D02494F2A5AC36300F0E591 /* MusicSearchAPIEndpoint.swift in Sources */,
 				3D0248D72A56CC4100F0E591 /* SearchResultsListViewController.swift in Sources */,
 				3D02494C2A5AC2CC00F0E591 /* APIEndpoint.swift in Sources */,
+				3D0249652A5AC7BC00F0E591 /* ImageLoader.swift in Sources */,
 				3D0248EC2A56D33800F0E591 /* SearchRepository.swift in Sources */,
 				3D0248A02A56C76E00F0E591 /* ViewController.swift in Sources */,
 				3D02489C2A56C76E00F0E591 /* AppDelegate.swift in Sources */,
 				3D02493F2A5ABCC100F0E591 /* BaseViewController.swift in Sources */,
+				3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */,
 				3D0249452A5AC06D00F0E591 /* UIViewController+Alert.swift in Sources */,
+				3D0249602A5AC72200F0E591 /* ImageDataSource.swift in Sources */,
 				3D0248DD2A56CD8400F0E591 /* SearchMusicFlowCoordinator.swift in Sources */,
 				3D0248E02A56CE2500F0E591 /* SearchResultsTableViewCell.swift in Sources */,
 				3D02494A2A5AC29300F0E591 /* NetworkError.swift in Sources */,
@@ -602,9 +640,11 @@
 				3D0249052A57DD7D00F0E591 /* String+Localizable.swift in Sources */,
 				3D0249432A5ABF7A00F0E591 /* SearchResultsListItemViewModel.swift in Sources */,
 				3D02495A2A5AC4D500F0E591 /* StandardAPIDataSource.swift in Sources */,
+				3D02495E2A5AC70D00F0E591 /* StandardImageRepository.swift in Sources */,
 				3D0248F22A56D3D100F0E591 /* APIEndpoints.swift in Sources */,
 				3D0249072A57EE1300F0E591 /* FontUtility.swift in Sources */,
 				3D0248EF2A56D39E00F0E591 /* StandardSearchRepository.swift in Sources */,
+				3D0249622A5AC73900F0E591 /* StandardImageDataSource.swift in Sources */,
 				3D0249562A5AC46900F0E591 /* SearchResultDTO.swift in Sources */,
 				3D0248E22A56CE8000F0E591 /* SearchResultsListViewModel.swift in Sources */,
 				3D0249532A5AC3FB00F0E591 /* APIDataSource.swift in Sources */,
