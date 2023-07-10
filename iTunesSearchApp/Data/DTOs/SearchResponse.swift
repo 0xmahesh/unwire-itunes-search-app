@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct SearchResponse: Codable {
+struct SearchResponse: Codable, Equatable {
     let resultCount: Int
     let results: [SearchResultDTO]
+    
+    static func == (lhs: SearchResponse, rhs: SearchResponse) -> Bool {
+        lhs.resultCount == rhs.resultCount &&
+        lhs.results == rhs.results
+    }
 }

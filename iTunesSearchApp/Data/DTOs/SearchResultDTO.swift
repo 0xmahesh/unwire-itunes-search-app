@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SearchResultDTO: Codable {
+struct SearchResultDTO: Codable, Equatable {
     let trackName: String?
     let artistName: String?
     let collectionName: String?

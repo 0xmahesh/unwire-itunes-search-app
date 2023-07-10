@@ -18,6 +18,8 @@ enum NetworkError: Error {
 extension NetworkError: Equatable {
     public static func == (_ lhs: NetworkError, _ rhs: NetworkError) -> Bool {
         switch (lhs, rhs) {
+        case (.invalidURL, .invalidURL):
+            return true
         case let (.apiError(respL), .apiError(respR)):
             return respL == respR
         case let (.networkError(errorL), .networkError(errorR)):
