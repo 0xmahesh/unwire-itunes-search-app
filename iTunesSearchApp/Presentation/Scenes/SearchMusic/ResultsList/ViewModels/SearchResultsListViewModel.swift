@@ -77,7 +77,6 @@ final class SearchResultsListViewModel {
     private func executeSearchTask() async {
         do {
             guard let songs = try await searchTask?.value else {
-                viewState.send(.error(.unknown))
                 return
             }
             if !self.songs.isEmpty {

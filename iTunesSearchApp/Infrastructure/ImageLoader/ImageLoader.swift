@@ -35,12 +35,12 @@ actor ImageLoader: ImageFetchable {
         }
         
         let task: Task<UIImage?, Error> = Task {
-            if Task.isCancelled {
+            let (data, _) = try await urlSession.data(for: urlRequest)
+            if let image = UIImage(data: data) {
+                return image
+            } else {
                 return nil
             }
-            let (data, _) = try await urlSession.data(for: urlRequest)
-            let image = UIImage(data: data)!
-            return image
         }
         
         images[urlRequest] = .inProgress(task)
