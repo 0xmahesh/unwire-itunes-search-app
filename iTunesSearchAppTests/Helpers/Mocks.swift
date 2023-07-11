@@ -51,6 +51,12 @@ extension SearchResponse {
     }
 }
 
+extension Song {
+    static func mock() -> Self {
+        return Song(artworkImageUrl: .mock(), trackName: .mock(), artistName: .mock(), shortDescription: .mock())
+    }
+}
+
 private extension Date {
     static func fromISO8601String(_ dateString: String) -> Date? {
         let dateFormatter = DateFormatter()

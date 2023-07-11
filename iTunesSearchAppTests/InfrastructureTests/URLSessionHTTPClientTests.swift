@@ -146,10 +146,6 @@ private class MockURLProtocol: URLProtocol {
             client?.urlProtocol(self, didFailWithError: error)
           }
     }
-    
-    override func stopLoading() {
-        
-    }
 }
 
 private extension String {
