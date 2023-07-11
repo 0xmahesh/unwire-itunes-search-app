@@ -1,5 +1,7 @@
 ## iTunes Search App
 
+![alt text](https://i.ibb.co/LSTpthw/i-Tunes-Search.gif)
+
 ### Checking out the code
 ```
 git clone https://github.com/0xmahesh/unwire-itunes-search-app.git
