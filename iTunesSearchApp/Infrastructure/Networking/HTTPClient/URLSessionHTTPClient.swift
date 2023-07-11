@@ -33,7 +33,6 @@ final class URLSessionHTTPClient: HTTPClient {
         jsonDecoder.dateDecodingStrategy = endpoint.dateDecodingStrategy
         
         do {
-            print("\(endpoint.queryParams["term"]) making request..")
             let (data, response) = try await urlSession.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode.isSuccessStatusCode else {
@@ -41,7 +40,6 @@ final class URLSessionHTTPClient: HTTPClient {
             }
             
             let responseBody = try jsonDecoder.decode(ResponseBody.self, from: data)
-            print("\(endpoint.queryParams["term"]) request success...\(httpResponse.statusCode)")
             return .success((responseBody, httpResponse))
             
         } catch let error as URLError {
