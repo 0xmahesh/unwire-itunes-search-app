@@ -1,6 +1,6 @@
 ## iTunes Search App
 
-![alt text](https://i.ibb.co/LSTpthw/i-tunes-search.gif)
+![alt text](assets/iTunesSearch.gif)
 
 ### Checking out the code
 ```
@@ -16,7 +16,7 @@ switch to <b>main</b> branch.
 - Users can perform keyword search using the search bar implemented in the home screen.
 - User input is subjected to a debounce to avoid unnecessary API requests being made.
 - If there is a match, the response is displayed in a list under the search bar.
-- Each search result cell displays track name, artist’s name, album art, the year in which the album was released along with the album name. 
+- Each search result cell displays track name, artist’s name, album art, the year in which the album was released along with the album name.
 - Pagination is supported, with 50 results per page. Infinite scroll is implemented for more search results.
 - Clearing the search text will clear the results.
 - If no results are returned from the API, the screen will display a "No results. Please try another keyword" banner.
