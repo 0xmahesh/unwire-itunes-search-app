@@ -74,7 +74,7 @@ class SearchResultsListViewModelTests: XCTestCase {
         searchSongsUseCase.executeResult = .failure(NetworkError.unknown)
 
         viewModel.viewState.sink { state in
-            if case .error(let error) = state, error == .invalidResponse {
+            if case .error(let error) = state, error == .nilResponse {
                 expectation.fulfill()
             }
         }.store(in: &cancellables)

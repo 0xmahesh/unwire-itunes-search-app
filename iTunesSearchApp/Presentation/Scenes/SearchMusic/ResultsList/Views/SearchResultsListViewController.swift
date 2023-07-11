@@ -114,7 +114,7 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
                     strSelf.showNoResultsBanner(songs.isEmpty && !(strSelf.searchBar.searchTextField.text?.isEmpty ?? false))
                     strSelf.applySnapshot(with: songs)
                 case .error(let error):
-                    strSelf.showAlert(title: error.title, message: error.description)
+                    error == .unknown ? strSelf.showAlert(title: error.title, message: error.description) : ()
                 }
             }
             .store(in: &cancellables)

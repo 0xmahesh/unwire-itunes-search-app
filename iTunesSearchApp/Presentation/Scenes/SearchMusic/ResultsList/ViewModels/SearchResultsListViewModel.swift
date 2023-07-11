@@ -79,6 +79,7 @@ final class SearchResultsListViewModel {
     private func executeSearchTask() async {
         do {
             guard let songs = try await searchTask?.value else {
+                viewState.send(.error(.nilResponse))
                 return
             }
             self.songs.isEmpty ? self.songs = songs : self.songs.append(contentsOf: songs)
@@ -113,11 +114,14 @@ final class SearchResultsListViewModel {
 
 enum SearchResultsError: Error {
     case unknown
+    case nilResponse
     
     var title: String {
         switch self {
         case .unknown:
             return "unknown_error_title".localized
+        default:
+            return "undefined_error_title"
         }
     }
     
@@ -125,6 +129,8 @@ enum SearchResultsError: Error {
         switch self {
         case .unknown:
             return "unknown_error_desc".localized
+        default:
+            return "undefined_error_desc"
         }
     }
 }
