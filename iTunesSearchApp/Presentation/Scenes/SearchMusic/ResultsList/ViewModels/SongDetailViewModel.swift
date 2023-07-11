@@ -10,7 +10,7 @@ import Foundation
 final class SongDetailViewModel: ObservableObject {
     @Published var song: Song
     var albumArtworkUrl: URL {
-        URL(string: song.artworkImageUrl)!
+        URL(string: song.highresImageUrl)!
     }
     
     init(song: Song) {

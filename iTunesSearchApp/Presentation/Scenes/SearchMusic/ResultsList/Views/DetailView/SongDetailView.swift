@@ -14,16 +14,21 @@ struct SongDetailView: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: viewModel.albumArtworkUrl) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(20)
-            } placeholder: {
-                Color.gray
-                    .aspectRatio(contentMode: .fit)
-                    .padding(20)
-            }
+            
+            AsyncImage(url: viewModel.albumArtworkUrl, content: { phase in
+                switch phase {
+                case .success( let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(20)
+                default:
+                    Image("placeholder")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(20)
+                }
+            })
             .frame(width: UIScreen.main.bounds.size.width)
             
             VStack(alignment: .leading, spacing: 10) {

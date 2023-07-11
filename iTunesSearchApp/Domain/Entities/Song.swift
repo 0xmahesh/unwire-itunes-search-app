@@ -14,6 +14,10 @@ struct Song: Codable, Identifiable, Hashable {
     let artistName: String
     let shortDescription: String
     
+    var highresImageUrl: String {
+        return artworkImageUrl.replacingOccurrences(of: "100x100bb", with: "600x600bb")
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(trackName)
