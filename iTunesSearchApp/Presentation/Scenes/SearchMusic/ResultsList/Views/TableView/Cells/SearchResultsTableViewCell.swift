@@ -19,6 +19,7 @@ class SearchResultsTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8.0
         imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "placeholder")
         return imageView
     }()
     
@@ -86,7 +87,7 @@ class SearchResultsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         viewModel?.fetchImageTask?.cancel()
-        artworkImageView.image = nil
+        artworkImageView.image = UIImage(named: "placeholder")
     }
     
     private func setupUI() {

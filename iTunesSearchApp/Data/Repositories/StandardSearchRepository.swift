@@ -17,9 +17,9 @@ final class StandardSearchRepository {
 }
 
 extension StandardSearchRepository: SearchRepository {
-    func fetchSearchResults(for query: String) async throws -> [Song]? {
+    func fetchSearchResults(for query: String, page: Int) async throws -> [Song]? {
         let resultsThreshold: Int = 50
-        let endpoint: MusicSearchAPIEndpoint = .search(query: query, limit: resultsThreshold)
+        let endpoint: MusicSearchAPIEndpoint = .search(query: query, limit: resultsThreshold, offset: resultsThreshold * page)
         return try await apiDataSource.makeRequest(endpoint: endpoint, type: SearchResponse.self).get()?.results.toArray()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchSongsUseCase {
-    func execute(with params: String) async throws -> [Song]?
+    func execute(with params: String, page: Int) async throws -> [Song]?
 }
 
 final class StandardSearchSongsUseCase: SearchSongsUseCase {
@@ -19,8 +19,8 @@ final class StandardSearchSongsUseCase: SearchSongsUseCase {
         self.searchRepository = searchRepository
     }
     
-    func execute(with params: String) async throws -> [Song]? {
-        return try await searchRepository.fetchSearchResults(for: params)
+    func execute(with params: String, page: Int) async throws -> [Song]? {
+        return try await searchRepository.fetchSearchResults(for: params, page: page)
     }
     
 }

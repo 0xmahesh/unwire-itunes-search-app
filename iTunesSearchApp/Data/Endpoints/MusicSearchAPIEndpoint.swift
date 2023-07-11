@@ -13,7 +13,7 @@ enum Region: String {
 }
 
 enum MusicSearchAPIEndpoint: APIEndpoint {
-    case search(query: String, limit: Int)
+    case search(query: String, limit: Int, offset: Int)
 }
 
 extension MusicSearchAPIEndpoint {
@@ -46,10 +46,11 @@ extension MusicSearchAPIEndpoint {
     
     var queryParams: [String : Any] {
         switch self {
-        case .search(let query, let limit):
+        case .search(let query, let limit, let offset):
             return ["term": query.replacingOccurrences(of: " ", with: "+"),
                     "country": region.rawValue,
-                    "limit": limit]
+                    "limit": limit,
+                    "offset": offset]
         }
     }
     

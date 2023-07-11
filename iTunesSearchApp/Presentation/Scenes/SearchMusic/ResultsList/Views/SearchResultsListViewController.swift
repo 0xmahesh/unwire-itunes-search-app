@@ -56,6 +56,8 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
         setupBindings()
         dismissKeyboardOnTap()
         tableView.delegate = self
+        tableView.prefetchDataSource = self
+        searchBar.searchTextField.delegate = self
     }
     
     private func setupUI() {
@@ -63,7 +65,6 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
         view.backgroundColor = .white
         view.addSubViews([searchBar, tableView, noResultsLabel])
         setupConstraints()
-        searchBar.searchTextField.delegate = self
     }
     
     private func setupConstraints() {
@@ -99,7 +100,7 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
                 case .isLoading(let isLoading):
                     print("isLoading: \(isLoading)") //TODO: add activity indicator
                 case .updateDataSource(let songs):
-                    strSelf.showNoResultsBanner(songs.isEmpty && !strSelf.viewModel.searchTerm.isEmpty)
+                    strSelf.showNoResultsBanner(songs.isEmpty && !(strSelf.searchBar.searchTextField.text?.isEmpty ?? false))
                     strSelf.applySnapshot(with: songs)
                 case .error(let error):
                     strSelf.showAlert(title: error.title, message: error.description)
@@ -133,7 +134,6 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
     private func showNoResultsBanner(_ show: Bool) {
         noResultsLabel.isHidden = !show
     }
-    
 }
 
 // MARK: UITableViewDelegate methods
@@ -141,6 +141,15 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
 extension SearchResultsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.endEditing(true)
+    }
+}
+
+extension SearchResultsListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let currentItemIndex = indexPaths.last?.row ?? 0
+        Task {
+            await viewModel.loadMoreResultsIfNeeded(currentItemIndex: currentItemIndex)
+        }
     }
 }
 
