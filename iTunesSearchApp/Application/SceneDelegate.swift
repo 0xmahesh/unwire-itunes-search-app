@@ -17,9 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        
         let appDIContainer = AppDIContainer()
         let navigationController = UINavigationController()
         let appFlowCoordinator = AppFlowCoordinator(navigationController: navigationController, dependencyContainer: appDIContainer)

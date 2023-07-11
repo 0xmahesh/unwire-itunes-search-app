@@ -19,7 +19,7 @@ final class SearchResultsListViewModel {
     private(set) var viewState = PassthroughSubject<SearchResultsViewState, Never>()
     private var searchTask: Task<[Song]?, Error>?
     private var searchTerm: String = ""
-    private var songs: [Song] = []
+    private(set) var songs: [Song] = []
     private var currentPage: Int = 0
     private var totalResults: Int = 0
     private var isFetchingMoreResults: Bool = false

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 final class SearchMusicSceneDIContainer: SearchMusicFlowDependencyProviding {
     
@@ -36,5 +37,13 @@ final class SearchMusicSceneDIContainer: SearchMusicFlowDependencyProviding {
     
     func makeSearchMusicFlowCoordinator(navigationController: UINavigationController) -> SearchMusicFlowCoordinator {
         return SearchMusicFlowCoordinator(navigationController: navigationController, dependencyProvider: self)
+    }
+    
+    func makeSongDetailViewModel(with song: Song) -> SongDetailViewModel {
+        return SongDetailViewModel(song: song)
+    }
+    
+    func makeSongDetailHostingController(with song: Song) -> UIViewController {
+        return UIHostingController(rootView: SongDetailView(viewModel: self.makeSongDetailViewModel(with: song)))
     }
 }

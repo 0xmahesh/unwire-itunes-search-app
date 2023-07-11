@@ -7,12 +7,24 @@
 
 import Foundation
 import UIKit
+import SwiftUI
+
+protocol Navigatable {
+}
 
 protocol Coordinator: AnyObject {
     func start()
+    func navigate(to path: Navigatable)
+}
+
+enum MusicSearchNavigationPath: Navigatable {
+    case detailView(Song)
 }
 
 final class SearchMusicFlowCoordinator: Coordinator {
+    
+    private var searchResultsViewController: SearchResultsListViewController?
+    
     weak var navigationController: UINavigationController?
     var dependencyProvider: SearchMusicFlowDependencyProviding
     
@@ -23,8 +35,23 @@ final class SearchMusicFlowCoordinator: Coordinator {
     
     func start() {
         let searchResultsViewModel = dependencyProvider.makeSearchResultsListViewModel()
-        let searchResultsViewController = dependencyProvider.makeSearchResultsViewController(with: searchResultsViewModel)
-        navigationController?.pushViewController(searchResultsViewController, animated: true)
+        searchResultsViewController = dependencyProvider.makeSearchResultsViewController(with: searchResultsViewModel)
+        if let searchResultsVC = searchResultsViewController {
+            searchResultsVC.coordinator = self
+            navigationController?.pushViewController(searchResultsVC, animated: true)
+        }
+        
     }
+    
+    func navigate(to path: Navigatable) {
+        if let path = path as? MusicSearchNavigationPath {
+            switch path {
+            case .detailView(let song):
+                searchResultsViewController?.present(dependencyProvider.makeSongDetailHostingController(with: song), animated: true)
+            }
+        }
+    }
+    
+    
 }
 

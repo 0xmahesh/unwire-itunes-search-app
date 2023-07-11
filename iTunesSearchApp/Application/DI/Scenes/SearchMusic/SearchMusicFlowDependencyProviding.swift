@@ -7,9 +7,11 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 protocol SearchMusicFlowDependencyProviding {
     func makeSearchResultsListViewModel() -> SearchResultsListViewModel
     func makeSearchResultsViewController(with viewModel: SearchResultsListViewModel) -> SearchResultsListViewController
     func makeSearchMusicFlowCoordinator(navigationController: UINavigationController) -> SearchMusicFlowCoordinator
+    func makeSongDetailHostingController(with song: Song) -> UIViewController 
 }

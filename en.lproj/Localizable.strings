@@ -10,3 +10,7 @@
 "empty_search_results_message" = "No results.\nPlease try another keyword.";
 "unknown_error_title" = "Oops!";
 "unknown_error_desc" = "Something went wrong...";
+"itunes_music_title_1" = "iTunes Music";
+"itunes_music_title_2" = "Play and download 60 million songs.";
+"itunes_music_title_3" = "plus your entire music library on all your devices.";
+"itunes_start_listening_btn_title" = "Start listening";

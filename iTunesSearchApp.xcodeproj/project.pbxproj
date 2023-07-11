@@ -59,6 +59,8 @@
 		3D0249872A5B9DF500F0E591 /* XCTest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249862A5B9DF500F0E591 /* XCTest+Extension.swift */; };
 		3D0249892A5BA3B600F0E591 /* StandardAPIDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249882A5BA3B600F0E591 /* StandardAPIDataSourceTests.swift */; };
 		3D02498B2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498A2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift */; };
+		3D02498E2A5D383200F0E591 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498D2A5D383200F0E591 /* SongDetailView.swift */; };
+		3D0249902A5D3C4100F0E591 /* SongDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498F2A5D3C4100F0E591 /* SongDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,8 @@
 		3D0249862A5B9DF500F0E591 /* XCTest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Extension.swift"; sourceTree = "<group>"; };
 		3D0249882A5BA3B600F0E591 /* StandardAPIDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardAPIDataSourceTests.swift; sourceTree = "<group>"; };
 		3D02498A2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListViewModelTests.swift; sourceTree = "<group>"; };
+		3D02498D2A5D383200F0E591 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
+		3D02498F2A5D3C4100F0E591 /* SongDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +299,7 @@
 		3D0248D22A56C90100F0E591 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D02498C2A5D381B00F0E591 /* DetailView */,
 				3D0248D92A56CC6E00F0E591 /* TableView */,
 				3D0248D62A56CC4100F0E591 /* SearchResultsListViewController.swift */,
 			);
@@ -306,6 +311,7 @@
 			children = (
 				3D0248E12A56CE8000F0E591 /* SearchResultsListViewModel.swift */,
 				3D0249422A5ABF7A00F0E591 /* SearchResultsListItemViewModel.swift */,
+				3D02498F2A5D3C4100F0E591 /* SongDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -600,6 +606,14 @@
 			path = InfrastructureTests;
 			sourceTree = "<group>";
 		};
+		3D02498C2A5D381B00F0E591 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				3D02498D2A5D383200F0E591 /* SongDetailView.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -768,6 +782,8 @@
 				3D0249532A5AC3FB00F0E591 /* APIDataSource.swift in Sources */,
 				3D0248FB2A56D57000F0E591 /* URLSessionHTTPClient.swift in Sources */,
 				3D0248F92A56D55E00F0E591 /* HTTPClient.swift in Sources */,
+				3D0249902A5D3C4100F0E591 /* SongDetailViewModel.swift in Sources */,
+				3D02498E2A5D383200F0E591 /* SongDetailView.swift in Sources */,
 				3D0248F52A56D48500F0E591 /* SearchResultDTO+Mapping.swift in Sources */,
 				3D0248EA2A56CFE500F0E591 /* SearchSongsUseCase.swift in Sources */,
 				3D02489E2A56C76E00F0E591 /* SceneDelegate.swift in Sources */,
@@ -970,7 +986,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -998,7 +1014,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

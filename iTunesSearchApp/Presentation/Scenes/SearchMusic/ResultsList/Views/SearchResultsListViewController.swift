@@ -48,6 +48,8 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
         }
     }()
     
+    weak var coordinator: Coordinator?
+    
     private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
@@ -141,6 +143,8 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
 extension SearchResultsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.endEditing(true)
+        let song = viewModel.songs[indexPath.row]
+        coordinator?.navigate(to: MusicSearchNavigationPath.detailView(song))
     }
 }
 
