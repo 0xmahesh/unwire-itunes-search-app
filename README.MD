@@ -21,7 +21,7 @@ switch to <b>main</b> branch.
 - Clearing the search text will clear the results.
 - If no results are returned from the API, the screen will display a "No results. Please try another keyword" banner.
 - If there were any errors encountered while fetching results, the app will present a standard error alert.
-- An in-memory cache is implemented to cache image downloads.
+- An in-memory cache is implemented to cache image downloads. (based on Donny Wal's solution referenced below.)
 - Selecting a search result will present a detail screen with album artwork and a UI mimicking Apple Music subscription screen.
 - Localization support is added with keys provided for English only.
 - An activity indicator is shown during search queries or prefetching data requests.
@@ -45,3 +45,6 @@ switch to <b>main</b> branch.
 
 ### Unit Testing
 - Unit tests cover basic cases in ViewModels, Network Service, Data Source, and Repository implementations.
+
+### References
+-https://www.donnywals.com/using-swifts-async-await-to-build-an-image-loader/
