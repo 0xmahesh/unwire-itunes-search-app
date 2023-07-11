@@ -38,7 +38,7 @@ class StandardAPIDataSourceTests: XCTestCase {
         mockHTTPClient.mockResult = .success((expectedResponseBody, expectedResponse))
         
         // act
-        let result = await sut.makeRequest(endpoint: MusicSearchAPIEndpoint.search(query: .mock(), limit: .mock()), type: SearchResponse.self)
+        let result = await sut.makeRequest(endpoint: MusicSearchAPIEndpoint.search(query: .mock(), limit: .mock(), offset: .mock()), type: SearchResponse.self)
         
         // assert
         XCTAssertEqual(result, expectedResult)
@@ -52,7 +52,7 @@ class StandardAPIDataSourceTests: XCTestCase {
         mockHTTPClient.mockResult = .failure(expectedError)
         
         // act
-        let result = await sut.makeRequest(endpoint: MusicSearchAPIEndpoint.search(query: .mock(), limit: .mock()), type: SearchResponse.self)
+        let result = await sut.makeRequest(endpoint: MusicSearchAPIEndpoint.search(query: .mock(), limit: .mock(), offset: .mock()), type: SearchResponse.self)
         
         // assert
         XCTAssertEqual(result, expectedResult)

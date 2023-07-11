@@ -38,7 +38,7 @@ class StandardSearchRepositoryTests: XCTestCase {
         mockAPIDataSource.mockResult = .success(mockResponseDTO)
         
         // act
-        let searchResults = try await sut.fetchSearchResults(for: query)
+        let searchResults = try await sut.fetchSearchResults(for: query, page: .mock())
         
         // assert
         XCTAssertEqual(searchResults?.count, expectedResult.count)
@@ -55,7 +55,7 @@ class StandardSearchRepositoryTests: XCTestCase {
         
         // act
         await XCTAssertThrowsAsyncError(
-            try await sut.fetchSearchResults(for: query),
+            try await sut.fetchSearchResults(for: query, page: .mock()),
             "Doesn't throw"
         ) { error in
             // assert

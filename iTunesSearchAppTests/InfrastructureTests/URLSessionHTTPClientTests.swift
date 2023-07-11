@@ -31,7 +31,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     
     func test_executeRequestWithJSONDecoding_returns_Success() async throws {
         // arrange
-        let endpoint = MusicSearchAPIEndpoint.search(query: "query", limit: .mock())
+        let endpoint = MusicSearchAPIEndpoint.search(query: "query", limit: .mock(), offset: .mock())
         let expectedResponseBody = SearchResponse(resultCount: 1, results: [.mock()])
         let expectedResponse = HTTPURLResponse(url: endpoint.url!, statusCode: 200 , httpVersion: nil, headerFields: nil)!
         let jsonString = String.mockJsonString
@@ -145,6 +145,10 @@ private class MockURLProtocol: URLProtocol {
           } catch {
             client?.urlProtocol(self, didFailWithError: error)
           }
+    }
+    
+    override func stopLoading() {
+        
     }
 }
 
