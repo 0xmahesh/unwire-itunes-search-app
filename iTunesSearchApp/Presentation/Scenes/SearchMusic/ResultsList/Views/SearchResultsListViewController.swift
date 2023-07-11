@@ -172,4 +172,8 @@ extension SearchResultsListViewController: UITextFieldDelegate {
         viewModel.clearResults()
         return true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+    }
 }
