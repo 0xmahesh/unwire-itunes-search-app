@@ -274,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				3D0249632A5AC7AD00F0E591 /* ImageLoader */,
-				3D0249462A5AC26900F0E591 /* Common */,
 				3D0248F62A56D4F200F0E591 /* Networking */,
 			);
 			path = Infrastructure;
@@ -434,13 +433,6 @@
 			isa = PBXGroup;
 			children = (
 				3D02493E2A5ABCC100F0E591 /* BaseViewController.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		3D0249462A5AC26900F0E591 /* Common */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Common;
 			sourceTree = "<group>";

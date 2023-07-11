@@ -53,10 +53,31 @@ final class SearchResultsListViewModel {
         viewState.send(.isLoading(false))
     }
     
+    @MainActor
+    func loadMoreResultsIfNeeded(currentItemIndex: Int) async {
+        guard !isFetchingMoreResults,
+              currentItemIndex == totalResults - 1 else {
+            return
+        }
+        
+        currentPage += 1
+        searchTask = makeSearchTask(with: searchTerm, page: currentPage)
+        isFetchingMoreResults = true
+        await executeSearchTask()
+        isFetchingMoreResults = false
+    }
+    
+    func clearResults() {
+        resetSearch()
+        viewState.send(.updateDataSource([]))
+    }
+    
+    //MARK: Private functions
+    
     private func executeSearchTask() async {
         do {
             guard let songs = try await searchTask?.value else {
-                viewState.send(.error(.invalidResponse))
+                viewState.send(.error(.unknown))
                 return
             }
             if !self.songs.isEmpty {
@@ -69,11 +90,6 @@ final class SearchResultsListViewModel {
         } catch {
             viewState.send(.error(.unknown))
         }
-    }
-    
-    func clearResults() {
-        resetSearch()
-        viewState.send(.updateDataSource([]))
     }
     
     private func resetSearch() {
@@ -96,32 +112,15 @@ final class SearchResultsListViewModel {
         }
     }
     
-    @MainActor
-    func loadMoreResultsIfNeeded(currentItemIndex: Int) async {
-        guard !isFetchingMoreResults,
-              currentItemIndex == totalResults - 1 else {
-            return
-        }
-        
-        currentPage += 1
-        searchTask = makeSearchTask(with: searchTerm, page: currentPage)
-        isFetchingMoreResults = true
-        await executeSearchTask()
-        isFetchingMoreResults = false
-    }
-
 }
 
 enum SearchResultsError: Error {
     case unknown
-    case invalidResponse
     
     var title: String {
         switch self {
         case .unknown:
             return "unknown_error_title".localized
-        default:
-            return "undefined_error_title"
         }
     }
     
@@ -129,8 +128,6 @@ enum SearchResultsError: Error {
         switch self {
         case .unknown:
             return "unknown_error_desc".localized
-        default:
-            return "undefined_error_description"
         }
     }
 }
