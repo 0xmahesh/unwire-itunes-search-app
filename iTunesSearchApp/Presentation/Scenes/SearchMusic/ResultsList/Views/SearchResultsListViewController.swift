@@ -39,6 +39,12 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
         return label
     }()
     
+    private let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
+    
     private lazy var dataSource: UITableViewDiffableDataSource<Int, Song> = {
         return UITableViewDiffableDataSource<Int, Song>(tableView: tableView) { [weak self] tableView, indexPath, song in
             guard let strSelf = self,
@@ -65,7 +71,7 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
     private func setupUI() {
         title = "search_title".localized
         view.backgroundColor = .white
-        view.addSubViews([searchBar, tableView, noResultsLabel])
+        view.addSubViews([searchBar, tableView, noResultsLabel, activityIndicator])
         setupConstraints()
     }
     
@@ -84,7 +90,10 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
             noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             noResultsLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
             noResultsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            noResultsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            noResultsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
         ])
     }
     
@@ -100,7 +109,7 @@ class SearchResultsListViewController: BaseViewController<SearchResultsListViewM
                 guard let strSelf = self else { return }
                 switch state {
                 case .isLoading(let isLoading):
-                    print("isLoading: \(isLoading)") //TODO: add activity indicator
+                    isLoading ? strSelf.activityIndicator.startAnimating() : strSelf.activityIndicator.stopAnimating()
                 case .updateDataSource(let songs):
                     strSelf.showNoResultsBanner(songs.isEmpty && !(strSelf.searchBar.searchTextField.text?.isEmpty ?? false))
                     strSelf.applySnapshot(with: songs)

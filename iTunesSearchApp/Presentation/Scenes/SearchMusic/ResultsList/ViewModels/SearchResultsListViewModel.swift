@@ -63,8 +63,10 @@ final class SearchResultsListViewModel {
         currentPage += 1
         searchTask = makeSearchTask(with: searchTerm, page: currentPage)
         isFetchingMoreResults = true
+        viewState.send(.isLoading(true))
         await executeSearchTask()
         isFetchingMoreResults = false
+        viewState.send(.isLoading(false))
     }
     
     func clearResults() {
