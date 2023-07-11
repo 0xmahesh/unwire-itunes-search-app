@@ -47,4 +47,4 @@ switch to <b>main</b> branch.
 - Unit tests cover basic cases in ViewModels, Network Service, Data Source, and Repository implementations.
 
 ### References
--https://www.donnywals.com/using-swifts-async-await-to-build-an-image-loader/
+- https://www.donnywals.com/using-swifts-async-await-to-build-an-image-loader/
