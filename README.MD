@@ -1,6 +1,6 @@
 ## iTunes Search App
 
-![alt text](https://i.ibb.co/LSTpthw/i-Tunes-Search.gif)
+![alt text](https://i.ibb.co/LSTpthw/i-tunes-search.gif)
 
 ### Checking out the code
 ```
