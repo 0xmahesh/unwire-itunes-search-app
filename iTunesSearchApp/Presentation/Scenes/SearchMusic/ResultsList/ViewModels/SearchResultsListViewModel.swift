@@ -81,11 +81,7 @@ final class SearchResultsListViewModel {
             guard let songs = try await searchTask?.value else {
                 return
             }
-            if !self.songs.isEmpty {
-                self.songs.append(contentsOf: songs)
-            } else {
-                self.songs = songs
-            }
+            self.songs.isEmpty ? self.songs = songs : self.songs.append(contentsOf: songs)
             totalResults = self.songs.count
             viewState.send(.updateDataSource(self.songs))
         } catch {
