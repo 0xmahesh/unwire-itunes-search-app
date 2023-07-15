@@ -86,7 +86,7 @@ class SearchResultsTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        viewModel?.fetchImageTask?.cancel()
+        viewModel?.resetCell()
         artworkImageView.image = UIImage(named: "placeholder")
     }
     

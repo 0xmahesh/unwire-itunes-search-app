@@ -11,7 +11,7 @@ import UIKit
 final class SearchResultsListItemViewModel {
     private let song: Song
     private let fetchImageUseCase: FetchImageUseCase
-    private(set) var fetchImageTask: Task<UIImage?, Error>?
+    private var fetchImageTask: Task<UIImage?, Error>?
     
     var title: String {
         return song.trackName
@@ -42,6 +42,10 @@ final class SearchResultsListItemViewModel {
             print("error downloading image...")
             return nil
         }
+    }
+    
+    func resetCell() {
+        fetchImageTask?.cancel()
     }
     
     private func makeFetchImageTask() -> Task<UIImage?, Error> {
