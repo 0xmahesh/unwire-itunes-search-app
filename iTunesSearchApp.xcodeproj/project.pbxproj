@@ -61,6 +61,7 @@
 		3D02498B2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498A2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift */; };
 		3D02498E2A5D383200F0E591 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498D2A5D383200F0E591 /* SongDetailView.swift */; };
 		3D0249902A5D3C4100F0E591 /* SongDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498F2A5D3C4100F0E591 /* SongDetailViewModel.swift */; };
+		3D0249932A62668500F0E591 /* UIAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249922A62668500F0E591 /* UIAppearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		3D02498A2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListViewModelTests.swift; sourceTree = "<group>"; };
 		3D02498D2A5D383200F0E591 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
 		3D02498F2A5D3C4100F0E591 /* SongDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewModel.swift; sourceTree = "<group>"; };
+		3D0249922A62668500F0E591 /* UIAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		3D0248CB2A56C8A700F0E591 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				3D0249912A62666D00F0E591 /* Common */,
 				3D0249742A5ACDAC00F0E591 /* FlowCoordinators */,
 				3D02496B2A5ACC3800F0E591 /* DI */,
 				3D02489B2A56C76E00F0E591 /* AppDelegate.swift */,
@@ -606,6 +609,14 @@
 			path = DetailView;
 			sourceTree = "<group>";
 		};
+		3D0249912A62666D00F0E591 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249922A62668500F0E591 /* UIAppearance.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -749,6 +760,7 @@
 				3D0248A02A56C76E00F0E591 /* ViewController.swift in Sources */,
 				3D02496D2A5ACC4C00F0E591 /* AppDIContainer.swift in Sources */,
 				3D02496A2A5ACAAC00F0E591 /* UIView+Extension.swift in Sources */,
+				3D0249932A62668500F0E591 /* UIAppearance.swift in Sources */,
 				3D02489C2A56C76E00F0E591 /* AppDelegate.swift in Sources */,
 				3D02493F2A5ABCC100F0E591 /* BaseViewController.swift in Sources */,
 				3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */,
