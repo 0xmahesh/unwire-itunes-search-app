@@ -24,7 +24,6 @@
 		3D0248EA2A56CFE500F0E591 /* SearchSongsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0248E92A56CFE500F0E591 /* SearchSongsUseCase.swift */; };
 		3D0248EC2A56D33800F0E591 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0248EB2A56D33800F0E591 /* SearchRepository.swift */; };
 		3D0248EF2A56D39E00F0E591 /* StandardSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0248EE2A56D39E00F0E591 /* StandardSearchRepository.swift */; };
-		3D0248F22A56D3D100F0E591 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0248F12A56D3D100F0E591 /* APIEndpoints.swift */; };
 		3D0248F52A56D48500F0E591 /* SearchResultDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0248F42A56D48500F0E591 /* SearchResultDTO+Mapping.swift */; };
 		3D0248F92A56D55E00F0E591 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0248F82A56D55E00F0E591 /* HTTPClient.swift */; };
 		3D0248FB2A56D57000F0E591 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0248FA2A56D57000F0E591 /* URLSessionHTTPClient.swift */; };
@@ -61,6 +60,7 @@
 		3D02498B2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498A2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift */; };
 		3D02498E2A5D383200F0E591 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498D2A5D383200F0E591 /* SongDetailView.swift */; };
 		3D0249902A5D3C4100F0E591 /* SongDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02498F2A5D3C4100F0E591 /* SongDetailViewModel.swift */; };
+		3D0249932A62668500F0E591 /* UIAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0249922A62668500F0E591 /* UIAppearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,6 @@
 		3D0248E92A56CFE500F0E591 /* SearchSongsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSongsUseCase.swift; sourceTree = "<group>"; };
 		3D0248EB2A56D33800F0E591 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		3D0248EE2A56D39E00F0E591 /* StandardSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSearchRepository.swift; sourceTree = "<group>"; };
-		3D0248F12A56D3D100F0E591 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		3D0248F42A56D48500F0E591 /* SearchResultDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResultDTO+Mapping.swift"; sourceTree = "<group>"; };
 		3D0248F82A56D55E00F0E591 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		3D0248FA2A56D57000F0E591 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
@@ -139,6 +138,7 @@
 		3D02498A2A5C04C000F0E591 /* SearchResultsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListViewModelTests.swift; sourceTree = "<group>"; };
 		3D02498D2A5D383200F0E591 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
 		3D02498F2A5D3C4100F0E591 /* SongDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewModel.swift; sourceTree = "<group>"; };
+		3D0249922A62668500F0E591 /* UIAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +229,7 @@
 		3D0248CB2A56C8A700F0E591 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				3D0249912A62666D00F0E591 /* Common */,
 				3D0249742A5ACDAC00F0E591 /* FlowCoordinators */,
 				3D02496B2A5ACC3800F0E591 /* DI */,
 				3D02489B2A56C76E00F0E591 /* AppDelegate.swift */,
@@ -264,7 +265,6 @@
 				3D0249502A5AC3E700F0E591 /* DataSources */,
 				3D02494D2A5AC35200F0E591 /* Endpoints */,
 				3D0248F32A56D46A00F0E591 /* ObjectMappers */,
-				3D0248F02A56D3B900F0E591 /* API */,
 				3D0248ED2A56D38F00F0E591 /* Repositories */,
 			);
 			path = Data;
@@ -392,14 +392,6 @@
 				3D02495D2A5AC70D00F0E591 /* StandardImageRepository.swift */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		3D0248F02A56D3B900F0E591 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				3D0248F12A56D3D100F0E591 /* APIEndpoints.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		3D0248F32A56D46A00F0E591 /* ObjectMappers */ = {
@@ -606,6 +598,14 @@
 			path = DetailView;
 			sourceTree = "<group>";
 		};
+		3D0249912A62666D00F0E591 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3D0249922A62668500F0E591 /* UIAppearance.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -749,6 +749,7 @@
 				3D0248A02A56C76E00F0E591 /* ViewController.swift in Sources */,
 				3D02496D2A5ACC4C00F0E591 /* AppDIContainer.swift in Sources */,
 				3D02496A2A5ACAAC00F0E591 /* UIView+Extension.swift in Sources */,
+				3D0249932A62668500F0E591 /* UIAppearance.swift in Sources */,
 				3D02489C2A56C76E00F0E591 /* AppDelegate.swift in Sources */,
 				3D02493F2A5ABCC100F0E591 /* BaseViewController.swift in Sources */,
 				3D0249682A5AC7D200F0E591 /* ImageFetchable.swift in Sources */,
@@ -765,7 +766,6 @@
 				3D0249432A5ABF7A00F0E591 /* SearchResultsListItemViewModel.swift in Sources */,
 				3D02495A2A5AC4D500F0E591 /* StandardAPIDataSource.swift in Sources */,
 				3D02495E2A5AC70D00F0E591 /* StandardImageRepository.swift in Sources */,
-				3D0248F22A56D3D100F0E591 /* APIEndpoints.swift in Sources */,
 				3D0249072A57EE1300F0E591 /* FontUtility.swift in Sources */,
 				3D0248EF2A56D39E00F0E591 /* StandardSearchRepository.swift in Sources */,
 				3D0249622A5AC73900F0E591 /* StandardImageDataSource.swift in Sources */,
